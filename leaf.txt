@@ -1,25 +1,3 @@
-<html>
-
-    <head>
-        <link rel='stylesheet' href='https://unpkg.com/leaflet@1.4.0/dist/leaflet.css'/>
-        <script src='https://unpkg.com/leaflet@1.4.0/dist/leaflet.js'></script>
-    </head>
-    
-    <body>
-        <h1>COVID-19 Recovered (April 24, 2020)</h1>
-        <div id='map' style='width:100%; height:500'></div>
-    </body>
-    
-    <script>
-        // Set up the world map
-        map = new L.Map('map');
-        var cartocdn = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png';
-        cartoAttrib = 'Carto geodatabase is good for this application';
-        carto = new L.TileLayer(cartocdn);
-        map.setView([51.5, 0.12],2); // centered on London lat, long
-        map.addLayer(carto);
-        
-        // add circles - Italy and Hubei are here as an example 
 L.circle([-51.7963,-59.5236],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:110}).addTo(map).bindPopup('Falkland Islands (Malvinas),United Kingdom : 11')
 L.circle([-42.8821,147.3272],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:670}).addTo(map).bindPopup('Tasmania,Australia : 67')
 L.circle([-40.9006,174.886],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:11180}).addTo(map).bindPopup('New Zealand : 1118')
@@ -258,8 +236,3 @@ L.circle([61.8926,-6.9118],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:
 L.circle([61.92411,25.748151],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:25000}).addTo(map).bindPopup('Finland : 2500')
 L.circle([64.9631,-19.0208],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:15420}).addTo(map).bindPopup('Iceland : 1542')
 L.circle([71.7069,-42.6043],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:110}).addTo(map).bindPopup('Greenland,Denmark : 11')
-
-        
-    </script>
-
-</html>
