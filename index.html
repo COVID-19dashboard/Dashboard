@@ -22,31 +22,11 @@
             Most people who fall sick with COVID-19 will experience mild to moderate symptoms and recover without special treatment.</h3>
             </div>
             <h1>COVID-19 Recovered (April 24, 2020)</h1>
-            <canvas id="graph"></canvas>
-            <div id='map' style='width:100%; height:500'></div>
         <div id='map' style='width:100%; height:500'></div>
     </body>
     
     <script>
         // Set up the world map
-        var c = document.getElementById("graph");
-        var ctx = c.getContext('2d');
-        
-        c.width = 800;
-        c.height = 200;
-        
-        data = [{cname:"Hubei",recover:59433}, {cname:"Italy",recover:7025},{cname:"Spain",recover:2575}]
-        
-        y = 0
-        for(i=0;i<data.length;i++) {
-            ctx.fillStyle = "red";
-            ctx.fillRect(0,y, data[i]['recover']/100,50)
-            ctx.fillStyle = "white";
-            ctx.fillText(data[i]['cname'],10,y+30)
-            y = y + 60;
-        };
-
-            
         map = new L.Map('map');
         var cartocdn = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png';
         cartoAttrib = 'Carto geodatabase is good for this application';
@@ -54,7 +34,7 @@
         map.setView([51.5, 0.12],2); // centered on London lat, long
         map.addLayer(carto);
         
-          // Added Circles in sync with new Data 
+        // add circles - Italy and Hubei are here as an example 
 L.circle([-51.7963,-59.5236],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:110}).addTo(map).bindPopup('Falkland Islands (Malvinas),United Kingdom : 11')
 L.circle([-42.8821,147.3272],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:670}).addTo(map).bindPopup('Tasmania,Australia : 67')
 L.circle([-40.9006,174.886],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:11180}).addTo(map).bindPopup('New Zealand : 1118')
@@ -293,7 +273,6 @@ L.circle([61.8926,-6.9118],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:
 L.circle([61.92411,25.748151],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:25000}).addTo(map).bindPopup('Finland : 2500')
 L.circle([64.9631,-19.0208],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:15420}).addTo(map).bindPopup('Iceland : 1542')
 L.circle([71.7069,-42.6043],{color:'red',fillColor:'#f03',fillOpacity:0.5,radius:110}).addTo(map).bindPopup('Greenland,Denmark : 11')
-
 
         
     </script>
